@@ -1,0 +1,89 @@
+<html>
+<head>
+<script languague = "JavaScript">
+    
+var answers = ["Yes","No","Maybe","Probably","Probably Not","Definitely Not","No One Knows","I Don't Know","The Future is Uncertain","Who Knows?","Try Again",];
+
+function random() {
+   
+    var rand = -1;
+    var solution = document.getElementById("answer");
+    var userQ = document.getElementById("question");
+
+   
+    rand = Math.random(rand) * answers.length; // multiply Math.random() by length of array
+    rand = Math.floor(rand);
+   
+    //alert(userQ.value.length);
+    
+   rand = 1
+    
+    if (userQ.value.length == 0) {
+     solution.value = ("Please Ask Question First");  
+    }
+    else {
+        solution.value = (answers[rand]);
+        if (rand == 1){ 
+         document.getElementById("myAudio").play();        
+        }  
+    }
+}
+
+function reset() {
+   
+    //delete contents of answer text box
+    document.getElementById("answer").value = "";
+}
+   
+</script>
+</head>
+ <body background="Images/002.gif">      
+
+    
+
+    
+<br/>
+<center>
+        
+<audio id="myAudio"> </audio>
+<img src="Images/fortune2.png"
+  
+<center>
+    
+<br/>
+       
+        
+<span style="background-color: #db6558">This is a magical website that can predict your future 
+        <font color="#db6558">
+<h1>The Super Magical Amazing 8 Ball!</h1>
+        
+
+          
+
+<p> <span style="background-color: #db6558">  <a href="index.html"> Click to go back to the main page </a>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+            
+         
+<input id = "question" type = “text” size=60 onFocusin = "reset()"/>
+<br/><br/>
+    <input type="button" value="Click here" onClick="random()"/>
+<br/>
+    <br/>
+    <input id = "answer" type = “text” size=60 readonly=true/>
+<br/>
+    <br/>
+    <audio id="myAudio" src = "Sounds/Error.mp3" >   <audio>
+        
+        
+
+
+        
+</center>
+</body>
+</html>
+
+
