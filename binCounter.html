@@ -1,0 +1,166 @@
+<html>
+<head>
+<script language="javaScript">
+var number = 0;
+var autoClicked = false
+
+
+function addOne()
+{
+   
+    
+number++;     
+    
+document.getElementById("count").value = number;
+    
+   if (number == 16)
+   {
+        number = 1;
+    }
+    
+    flipLEDs();
+    
+    document.getElementById("count").value = number;
+    
+    
+    if (autoClicked == true)
+    {
+        var timer = setTimeout("addOne()",900);
+    }
+    
+}  // end of addOne function
+
+    
+function flipLEDs()
+{
+    onesPlace();
+    twosPlace();
+    foursPlace();
+    eightsPlace();   
+}
+    
+function auto()
+{
+        
+    if( autoClicked == false )        
+    {
+        autoClicked = true;
+        document.getElementById("runStop").value = "Pause";
+        addOne();
+    }
+    else
+    {
+        autoClicked = false;
+        document.getElementById("runStop").value = "Run";
+    }
+}
+    
+    
+function onesPlace()    
+{
+    //write code that test id number is odd or even
+   
+    
+    
+   if (number % 2 == 1)   //number divied by 2
+   {
+       document.getElementById("ones").src = "Images/Roxiehatred.png";   
+   }
+    else
+    {
+       document.getElementById("ones").src = "Images/ledOFF.png"; 
+    }
+    
+}    
+ 
+    
+function twosPlace()   
+    
+{
+    
+if (number % 4 >= 2)   //number divied by 2
+   {
+       document.getElementById("twos").src = "Images/Roxiehatred.png";   
+   }
+    else
+    {
+       document.getElementById("twos").src = "Images/ledOFF.png"; 
+    }
+    
+} 
+    
+      
+
+function foursPlace()   
+    
+{
+    
+if (number % 8 >= 4)   //number divied by 2
+   {
+       document.getElementById("fours").src = "Images/Roxiehatred.png";   
+   }
+    else
+    {
+       document.getElementById("fours").src = "Images/ledOFF.png"; 
+    }
+    
+}  
+    
+    
+function eightsPlace()      
+{
+    
+if (number % 16 >= 8)   //number divied by 2
+   {
+       document.getElementById("eights").src = "Images/Roxiehatred.png";   
+   }
+    else
+    {
+       document.getElementById("eights").src = "Images/ledOFF.png"; 
+    }
+    
+}
+    
+    
+</script>
+<head>
+<body>
+ <body background="Images/textsite.gif">
+<center>
+<h1> Binary Clock </h1>
+    <br/>
+    <br/>
+    Click here to <a href=index.html> go To my MainPage. </a>
+<br/>
+<br/>
+<input type = "button" value = "Add One" onclick="addOne()"/>
+<input id="runStop" type = "button" value = "Run" onclick="auto()"/><br/><br/>
+<input id="count" type = "text" size ="20" style="text-align:center">
+
+
+<div id="first" style="position:absolute; top:150; left: 600">
+2^0<br/>
+<img id="ones" src="Images/ledOFF.png" width="30"/>
+</div>
+
+<div id="second" style="position:absolute; top:150; left: 500">
+2^1<br/>
+<img id="twos" src="Images/ledOFF.png" width="40"/>
+</div>
+
+<div id="third" style="position:absolute; top:150; left: 400">
+2^2<br/>
+<img id="fours" src="Images/ledOFF.png" width="50"/>
+</div>
+
+
+<div id="fourth" style="position:absolute; top:150; left: 300">
+2^3<br/>
+<img id="eights" src="Images/ledOFF.png"  width="60"/>
+</div>
+
+
+
+</center>
+</body>
+</html>
