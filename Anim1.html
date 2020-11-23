@@ -1,0 +1,53 @@
+<html>
+<head>
+<script language="javaScript">
+function beginAnim()
+{
+    var myDude = document.getElementById("dude");
+    var xPos = myDude.style.left;
+    xPos = parseInt(xPos);
+    xPos -= 10;0
+    
+    
+    if( xPos < 0) //hes off screen
+    {
+        xPos =    900;
+    }
+    
+    myDude.style.left = xPos;
+    
+    
+    var timer = setTimeout("beginAnim()",80)
+}
+    
+    
+    
+</script>
+</head>
+    <body bgcolor = "#2EDC69">
+<body>
+    Click here to <a href=index.html> go To my MainPage. </a>
+<center>
+<h1>My Animation</h1>
+<input type = "button" value = "Start" onClick="beginAnim()"/>
+</center>
+<div id="setting" style="position:absolute; top:125; left:100">
+<img src="Images/anim1Bkgnd.jpg" width="800"/>
+</div>
+<div id="dude" style="position:absolute; top:350; left:900">
+<img src="Images/walking1.gif" width = "150"/>
+</div>    
+    
+<div style="position:absolute; top:125; left:0">
+<img src = "Images/curtain2.jpg" width="150" height="460"/>
+        
+
+</div>
+    
+<div style="position:absolute; top:125; left:900">
+<img src = "Images/curtain2.jpg" width="150" height="460"/>
+        
+
+</div>
+</body>
+</html>
