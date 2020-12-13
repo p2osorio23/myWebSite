@@ -1,80 +1,91 @@
 <html>
-<head> 
+<head>
 <script language="JavaScript">
 
-var partsOfSpeech = ["Enter a noun.", "word2", "word3", "word4", "word5", "word6"];
-var answers = new Array(partsOfSpeech.length);
-var story = [" phrase1", "phrase2", "phrase3", "phrase4", "phrase5", "phrase6", "phrase7" ];
+var partsOfSpeech = ["Enter a noun.", "Enter a verb ending in ED", "Enter a verb ending in ED", "Enter a place", "Enter a Noun", "Enter a verb ending in ED","Enter a Noun","Enter a noun","Enter verb ending with ED","Enter a verb ending with Ed","Enter a feeling"];
+    
+var answers = ["word1","word2","word3","word4","word5","word6","word7","word8","word9","word10","word11"];
+    
+var story = [" One day there was a ", ". It ", " whenever it ", ". Then it went to ", ". Then it met a  ", ". They ", ". Then one day its "," disappeared. The ", " tried to look for it. It ", " for a long time. Then he finally ", ". Its friend finally came back. They were so ", ". The end!"];
+
+    
 var count = 0;
 
 function prompt2()
 {
-	// if this is the start, display the textbox and hide the story. 
-	// then display the first element of partsOfSpeech in the textbox. 
-   // document.getElementById("userEnter").style.visibility = "visible";
- //   document.getElementById("story").style.visibility = "hidden";
-   // document.getElementById("response").value = partsOfSpeech[count];
-   alert("hello") 
+// if this is the start, display the textbox and hide the story.
+// then display the first element of partsOfSpeech in the textbox.
+    document.getElementById("userEnter").style.visibility = "visible";
+    document.getElementById("story").style.visibility = "hidden";
+    document.getElementById("response").value = partsOfSpeech[count];
+   
 }
+
 
 
 function getWords()
 {
-    
-    var wordBox = document.getElementById("response");
-    answers[count] = wordBox.value
-    
-    
+   
+    var wordBox = document.getElementById("response")
+    answers[count] = wordBox.value;
+   
+   
     count ++;   //incremtn count
-    
+   
     if( count < partsOfSpeech.length )
     {
-        prompt();
+        prompt2();
     }
     else           //all elements have been addded
     {
         count = 0;
         document.getElementById("story").innerHTML = displayStory();
     }
-        
 }
+    
 
 function displayStory()
 {
-	var answer = "";
-	var i;
-    
-    
-	
-	// loop to stitch elements of story with elements of answers. 
-	answer = answer + story[0];
-    answer = answer + partsOfSpeech[0];
-    
-    //alert (answer)
-    
-	for ( i = 0; i< answers.length; i++)
-	{
-	   //answers[i] equals textbox;
-     // answers[5] equals textbox;
-      // answers[9] equals textbox;
-	}
-    else if (answers[i] == "")
-	// if there's one more element in story than answers, then add the last element of answers
+    var answer = "";
+    var i; 
 
-	// Make the story div visible, and the userEnter div hidden.	
+                         // loop to stitch elements of story with elements of answers.
+                        //answer = answer + story[0];
+                   // answer = answer + partsOfSpeech[0];
    
-    document.getElementById("userEnter").style.visibility = visible "hidden";
-    document.getElementById("story").style.visibility = visible "visible";
+                             //alert (answer)
+   
+   for ( i = 0; i< answers.length; i++)
+    {
+       answer = answer + story [i];
+       answer = answer + answers [i];
+    } 
     
+    if ( i < story.length)
+        answer = answer + story[i];
+  //  else if (answers[i] == "")
+// if there's one more element in story than answers, then add the last element of answers
 
-	// return the variable answer.
-    return answer; 
+// Make the story div visible, and the userEnter div hidden.
+  alert(answer)
+    
+    document.getElementById("userEnter").style.visibility ="hidden";
+    document.getElementById("story").style.visibility ="visible";
+   
+
+// return the variable answer.
+    return answer;
+  
 }
 
 </script>
 </head>
 <body>
-<center> 
+    <a>Click here to <a href=index.html> return to Index.</a>
+    <br/>
+    <br/>
+    <br/>
+<center>
 <h1>My MadLib!</h1>
 <input id="daButton" type="button" value="start" onClick="prompt2()"/>
 </center>
@@ -83,7 +94,7 @@ function displayStory()
 </div>
 
 <div id="story" style="position:absolute; overflow:scroll; top:300; left:200; width:400; height: 200; visibility:hidden">
-One day there was a NOUN. it VERBED whenever it VERBED. Then it went to a PLACE. Then it met a NOUN. They VERBED all day they had lots of NOUN. Then one day its NOUN disappeared. The NOUN tried to look for it. It VERBED for a long time. Then he finally VERBED. Its friend finally came back. They were so FEELING. The end. 
+One day there was a NOUN. it VERBED whenever it VERBED. Then it went to a PLACE. Then it met a NOUN. They VERBED all day they had lots of NOUN. Then one day its NOUN disappeared. The NOUN tried to look for it. It VERBED for a long time. Then he finally VERBED. Its friend finally came back. They were so FEELING. The end.
 
 
 </body>
