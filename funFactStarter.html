@@ -1,0 +1,93 @@
+
+<html> 
+<head> 
+<script language="JavaScript">
+
+/*************** Algorithm ******************
+1. make a list of varibles that will be displayed 
+2. make a funtionn thst will call those varivles from the list
+3. put those called varibles in a text box that will be displayed to the user
+4. maek aan array of repsones to the main items (asnwers'
+5. make a fuynction that will display the answers
+6. make an if statment that will display a certai naswer when each main item is choosen
+7. display the correct answer when the correct main item is chosen and displayed 
+8. when user hits button they shou;d see the final prduct all in the textbox 
+ 
+
+*/
+
+
+var group = ["-- Choose a Wes Anderson Film --", "Isle of Dogs","Moonrise Kindom","The Grand Budapest Hotel","Fantastic Mr. Fox","The Royal Tenenbaums","The Darjeeling Limited"];
+
+var facts = ["-- No Film Selected --", "Isle of Dogs is the second longest stop-animation film.","Wes Anderson used Google Earth to find the perfect locations for the film.","The Grand Budapest Hotel was shot in three different aspect ratios.","This movie used 535 total puppets.","The base of the story for The Royal Tenenbaums was created out of the divorce of Anderson’s parents","In order to achieve a constant limp, Owen Wilson placed a small lime in his shoe."];
+
+function loadData() // fills in the drop fown for the slect object 
+{
+	for(var i = 0; i <group.length; i++)
+    {
+        var daList = document.getElementById("prez");
+  		var option = document.createElement("option");
+  		option.text = group[i];
+  		daList.add(option);
+    }
+}
+
+// This function identifies which element from the drop down has been selected. It calls the 
+// getIndex function to acquire what the index of the selected item. Then it displays the 
+// corresponding element in the facts list. (This is diplayed in the textbox on the web page.)
+function start()
+{
+    var names = document.getElementById("prez");
+    
+    var daIndex = getIndex(names.value);
+    
+ // alert(daIndex);
+	// We'll code this second
+  //  alert(getIndex("Isle of Dogs"));
+    document.getElementById("funFact").value = facts[daIndex];
+    
+    
+    
+}
+
+// This function searches the group array for the element passed as a parameter
+// and returns the index number for that element in the array.
+function getIndex(d)
+{
+        var answer = -1; // invlaid
+    
+    
+        for( var i = 0; i < group.length; i++ )//traversd loop array
+        {  
+        
+          if (group[i] == d )
+          {
+              answer = i;
+          }                               //var answer = d + "t
+        }
+    return answer;  //-1,"hello"
+}
+
+ 
+
+</script>  
+</head>
+<body onload="loadData()" background="Images/turingbkg.png">
+<center>
+<h1>Wes Anderson Movie Fun Facts</h1>
+<span style="background-color: #db6558"> Click <a href=index.html> here to return to my home page. <a/>
+
+<br/><br/>
+<table border = 3>
+	<tr>
+		<td>  	<select name="p1" id="prez"></select>	</td>
+		<td>	<input id="funFact" type="text" size="70"/> </td>   
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="click" onclick="start()"/>
+</center>
+
+
+</body>
+</html>
